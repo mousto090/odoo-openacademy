@@ -1,0 +1,41 @@
+version: "3.5"
+services:
+  web:
+    container_name: odoo_ogi
+    image: odoo:11.0
+    depends_on:
+      - db
+    ports:
+      - "80:8069"
+    environment:
+      - USER=odoo
+      - PASSWORD=odoo
+    volumes:
+      - odoo-ogi-web-data:/var/lib/odoo
+      - ./config:/etc/odoo
+      - ./addons:/mnt/extra-addons
+    networks:
+      - odoo_ogi_network
+  db:
+    container_name: odoo_ogi_db
+    image: postgres:9.5.24
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_PASSWORD=odoo
+      - POSTGRES_USER=odoo
+      - PGDATA=/var/lib/postgresql/data/pgdata
+    volumes:
+      - odoo-ogi-db-data:/var/lib/postgresql/data/pgdata
+    networks:
+      - odoo_ogi_network
+volumes:
+  odoo-ogi-web-data:
+    name: odoo-ogi-web-data
+  odoo-ogi-db-data:
+    name: odoo-ogi-db-data
+networks:
+  odoo_ogi_network:
+    name: odoo_ogi_network
+    driver: bridge
