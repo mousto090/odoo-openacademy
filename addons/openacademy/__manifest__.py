@@ -28,6 +28,8 @@
         'views/views.xml',
         'views/templates.xml',
         'views/openacademy.xml',
+        'views/course.xml',
+        'views/session.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
