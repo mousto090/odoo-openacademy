@@ -18,6 +18,13 @@
         <field name="view_type">form</field>
         <field name="view_mode">tree,form</field>
     </record>
+    <!-- window action for partner -->
+    <record model="ir.actions.act_window" id="contact_list_action">
+        <field name="name">Contacts</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
 
     <!--  Menus -->
 
@@ -31,5 +38,8 @@
     <menuitem id="courses_menu" name="Courses" parent="openacademy_menu" action="course_list_action"/>
     <!-- sessions menu -->
     <menuitem id="sessions_menu" name="Sessions" parent="openacademy_menu" action="session_list_action"/>
+    <!-- partner menu -->
+    <menuitem id="configuration_menu" name="Configuration" parent="main_openacademy_menu"/>
+    <menuitem id="contact_menu" name="Contacts" parent="configuration_menu" action="contact_list_action"/>
 
 </odoo>
