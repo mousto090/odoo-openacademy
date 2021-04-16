@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <template id="report_picking_inherit" inherit_id="stock.report_picking">
+            <xpath expr="//table[@t-if='o.move_line_ids']/thead/tr/th[2]" position="after">
+                <th width="10%">
+                    <span>Couleur</span>
+                </th>
+                <th width="20%">
+                    <span>Marque</span>
+                </th>
+            </xpath>
+            <xpath expr="//table[@t-if='o.move_line_ids']/tbody/tr/td[2]" position="after">
+                <td>
+                    <span t-if="move.color_id.name.strip() != 'NA'" t-field="move.color_id"/>
+                </td>
+                <td>
+                    <span t-if="move.brand_id.name.strip() != 'NA'" t-field="move.brand_id"/>
+                </td>
+            </xpath>
+        </template>
+
+    </data>
+</odoo>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="report_delivery_document" inherit_id="stock.report_delivery_document">
+        <xpath expr="//table[@class='table table-condensed mt48']/thead/tr/th[1]" position="after">
+            <th>
+                <span>Couleur</span>
+            </th>
+            <th>
+                <span>Marque</span>
+            </th>
+        </xpath>
+                <xpath expr="//table[@class='table table-condensed mt48']/tbody/tr/td[1]" position="after">
+            <th>
+                <span t-if="move.color_id.name.strip() != 'NA'" t-field="move.color_id"/>
+            </th>
+            <th>
+                <span t-if="move.brand_id.name.strip() != 'NA'" t-field="move.brand_id"/>
+            </th>
+        </xpath>
+    </template>
+</odoo>
