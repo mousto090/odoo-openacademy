@@ -12,10 +12,14 @@
             </xpath>
             <xpath expr="//table[@t-if='o.move_line_ids']/tbody/tr/td[2]" position="after">
                 <td>
-                    <span t-if="move.color_id.name.strip() != 'NA'" t-field="move.color_id"/>
+                    <t t-if="move.color_id">
+                        <span t-if="move.color_id.name.strip() != 'NA'" t-field="move.color_id"/>
+                    </t>
                 </td>
                 <td>
-                    <span t-if="move.brand_id.name.strip() != 'NA'" t-field="move.brand_id"/>
+                    <t t-if="move.brand_id">
+                        <span t-if="move.brand_id.name.strip() != 'NA'" t-field="move.brand_id"/>
+                    </t>
                 </td>
             </xpath>
         </template>
