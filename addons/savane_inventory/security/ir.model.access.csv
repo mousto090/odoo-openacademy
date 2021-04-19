@@ -1,2 +1,3 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_hr_savane_hr_savane,hr_savane.hr_savane,model_hr_savane_hr_savane,,1,0,0,0
+access_savane_inventory_color,savane_inventory.savane.color,model_savane_color,,1,1,1,1
+access_savane_inventory_brand,savane_inventory.savane.brand,model_savane_brand,,1,1,1,1
